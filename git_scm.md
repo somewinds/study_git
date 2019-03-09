@@ -61,6 +61,8 @@ git log -p // 用来显示每次提交的内容差异，加上 -2 来仅显示�
 
 git log --stat // 每次提交的简略的统计信息
 
+git log --oneline // 单行显示历史
+
 git log --pretty // 指定使用不同于默认方式的格式显示提交历史
 git log --pretty=oneline // 单行显示
 git log --pretty=format:"%h - %an, %ar : %s" // 定制要显示的记录格式 
@@ -179,6 +181,37 @@ warning: alias.ll has multiple values
 error: cannot overwrite multiple values with a single value
        Use a regexp, --add or --replace-all to change alias.ll.
 ```
+
+## 三、Git 分支
+在很多版本控制系统中，这是一个略微低效的过程——常常需要完全创建一个源代码目录的副本。对于大项目来说，这样的过程会耗费很多时间。
+
+有人把 Git 的分支模型称为它的`‘必杀技特性’'，也正因为这一特性，使得 Git 从众多版本控制系统中脱颖而出。 
+
+Git 处理分支的方式可谓是难以置信的轻量，创建新分支这一操作几乎能在瞬间完成，并且在不同分支之间的切换操作也是一样便捷。
+
+与许多其它版本控制系统不同，Git 鼓励在工作流程中频繁地使用分支与合并，哪怕一天之内进行许多次。
+
+理解和精通这一特性，你便会意识到 Git 是如此的强大而又独特，并且从此真正改变你的开发方式。
+
+![image](https://www.git-scm.com/book/en/v2/images/commit-and-tree.png)
+
+
+### 3.1 分支简介
+
+```
+git branch testing // 创建 testing 分支
+
+git log --oneline --decorate // 命令查看各个分支当前所指的对象
+
+git checkout testing // 切换分支
+```
+
+
+
+
+
+
+
 
 
 
