@@ -205,7 +205,15 @@ git log --oneline --decorate // 命令查看各个分支当前所指的对象
 
 git checkout testing // 切换分支
 
+git checkout -b testing // 简写，新建分支并切换到该分支上
+
 git log --oneline --decorate --graph --all // 输出你的提交历史、各个分支的指向以及项目的分支分叉情况
+```
+
+### 3.2 分支的新建与合并
+
+```
+git checkout -b iss53 // 创建并切换到 #53
 ```
 
 
