@@ -129,15 +129,36 @@ git checkout * // 丢弃所有文件的修改，无法丢弃暂存区内的文�
 git checkout -- xx.xxx // 丢弃单个文件的修改，或 git checkout xx.xxx
 ```
 
-### 远程仓库的使用
+### 2.5 远程仓库的使用
 ```
 git remote -v // 会显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL
 
 git remote show origin // 查看远程仓库的更多信息
 
 git remote rename pb paul // 重命名远程参考的简写名
+```
+
+### 2.6 打标签
 
 ```
+git tag // 列出所有标签
+
+git tag -a v1.4 -m "第一条标签" // -m 选项指定了一条将会存储在标签中的信息
+
+git show v1.4 // 可以看到标签信息与对应的提交信息
+
+git tag v1.5 // 轻量标签创建，在此标签上运行 git show，你不会看到额外的标签信息，命令只会显示出提交信息
+
+git tag -a 标签-文件重命名 500815ed0df1a1477920c3196f454e5fb80dfb3a // 为指定提交添加标签
+
+git push origin [tagname] // 在创建完标签后你必须显式地推送标签到共享服务器上
+
+git tag -d [tagname] // 删除本地仓库的指定标签
+
+git push <remote> :refs/tags/v1.4 // 删除远程仓库的标签，注意分号
+```
+
+进入vim编辑器后，INSERT 进入编辑模式，在第一行空行输入标签备注信息，ESC 退出编辑模式，英文输入 :wq 保存并退出编辑器
 
 
 
