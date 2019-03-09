@@ -37,4 +37,7 @@ git rm xx.xx // 删除指定文件（如果在暂存区或有进行修改会报�
 git rm xx.xx -f // 强制删除
 ```
 
+```
+git mv file_from file_to // 文件重命名
+```
 
