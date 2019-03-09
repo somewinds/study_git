@@ -160,7 +160,25 @@ git push <remote> :refs/tags/v1.4 // 删除远程仓库的标签，注意分号
 
 进入vim编辑器后，INSERT 进入编辑模式，在第一行空行输入标签备注信息，ESC 退出编辑模式，英文输入 :wq 保存并退出编辑器
 
+### 2.7 Git 别名
 
+```
+git config --global alias.ci commit // 设置git命令 commit 的别名
+git config --global alias.st status // 设置git命令 status 的别名
+git config --global alias:ll "log --pretty=oneline" // 设置git命令 log --pretty=oneline 的别名
+
+git config --global --unset alias.ll // 删除已设置的 ll 别名
+
+git config --global --replace-all alias.ll log // 将别名重置为新的别名指令
+
+```
+
+重复添加会提示：
+```
+warning: alias.ll has multiple values
+error: cannot overwrite multiple values with a single value
+       Use a regexp, --add or --replace-all to change alias.ll.
+```
 
 
 
