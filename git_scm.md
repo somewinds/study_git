@@ -129,11 +129,28 @@ git checkout * // 丢弃所有文件的修改，无法丢弃暂存区内的文�
 git checkout -- xx.xxx // 丢弃单个文件的修改，或 git checkout xx.xxx
 ```
 
+### 远程仓库的使用
+```
+git remote -v // 会显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL
+
+git remote show origin // 查看远程仓库的更多信息
+
+git remote rename pb paul // 重命名远程参考的简写名
+
+```
 
 
 
 
 
+
+
+
+
+
+
+
+---
 
 [VIM中的保存和退出、VIM退出命令、如何退出vim编辑、VIM命令大全](https://blog.csdn.net/feosun/article/details/73196299)
 
