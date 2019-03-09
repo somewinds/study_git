@@ -1,3 +1,4 @@
+
 ```
 git add // 添加到暂存区
 ```
@@ -6,6 +7,28 @@ git add // 添加到暂存区
 // 取消暂存
 
 ```
-git commit -m "initial project version" // 提交分支
+git commit -m "initial project version" // 提交分支，但只存在本地分支，未推送到远程
+
+// 在Linux系统中，commit信息使用单引号''包括，我使用的windows系统，信息应该是双引号""包括
+
+git push // 推送到远程
 ```
-在Linux系统中，commit信息使用单引号''包括，我使用的windows系统，信息应该是双引号""包括
+
+
+- Changes to be committed 暂存状态，等待被提交
+- Changes not staged for commit 已跟踪的文件内容发生了变化，但还没有放到暂存区
+```
+git status // 获取文件状态
+
+// On branch master
+// Your branch is ahead of 'origin/master' by 1 commit.
+//   (use "git push" to publish your local commits)
+
+git status --short // 状态简览 或 git status -s
+```
+
+```
+
+```
+
+
