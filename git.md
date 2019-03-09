@@ -28,7 +28,7 @@ git status --short // 状态简览 或 git status -s
 ```
 
 ```
-
+git commit -a // 跳过暂存直接提交
 ```
 
 
