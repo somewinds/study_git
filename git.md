@@ -31,4 +31,10 @@ git status --short // 状态简览 或 git status -s
 git commit -a // 跳过暂存直接提交
 ```
 
+```
+git rm xx.xx // 删除指定文件（如果在暂存区或有进行修改会报错，可以进行强制删除）
+
+git rm xx.xx -f // 强制删除
+```
+
 
