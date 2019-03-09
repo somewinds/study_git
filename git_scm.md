@@ -204,6 +204,8 @@ git branch testing // 创建 testing 分支
 git log --oneline --decorate // 命令查看各个分支当前所指的对象
 
 git checkout testing // 切换分支
+
+git log --oneline --decorate --graph --all // 输出你的提交历史、各个分支的指向以及项目的分支分叉情况
 ```
 
 
