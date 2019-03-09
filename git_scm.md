@@ -1,3 +1,4 @@
+## Git 常用命令
 
 ```
 git add // 添加到暂存区
@@ -40,4 +41,10 @@ git rm xx.xx -f // 强制删除
 ```
 git mv file_from file_to // 文件重命名
 ```
+其实，运行 git mv 就相当于运行了下面三条命令：
+```
+mv README.md README
+git rm README.md
+git add README
 
+```
