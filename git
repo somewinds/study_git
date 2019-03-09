@@ -1,0 +1,6 @@
+git add // 添加到暂存区
+如果是指定文件 git add xxx.js，如果是所有文件，git add .
+
+// 取消暂存
+
+git commit -m 'initial project version' // 提交分支
