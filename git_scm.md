@@ -396,9 +396,52 @@ git mergetool // 打开合并工具解决冲突，输入 Beyond Compare，打开
 git add * // 将所有文件添加到暂存区
 
 git rebase --continue // 继续变基（衍和）
+
+git checkout master // 切换到 master
+
+git merge experiment // 进行一次快进合并
 ```
 
-git rebase master 它的原理是首先找到这两个分支（即当前分支 experiment、变基操作的目标基底分支 master）的最近共同祖先 C2，然后对比当前分支相对于该祖先的历次提交，提取相应的修改并存为临时文件，然后将当前分支指向目标基底 C3, 最后以此将之前另存为临时文件的修改依序应用。（译注：写明了 commit id，以便理解，下同）
+git rebase master 它的原理是首先找到这两个分支（即当前分支 experiment、变基操作的目标基底分支 master）的最近共同祖先 C2，然后对比当前分支相对于该祖先的历次提交，提取相应的修改并存为临时文件，然后将当前分支指向目标基底 C3, 最后以此将之前另存为临时文件的修改依序应用。（译注：写明了 commit id，以便理解）
+
+![image](https://www.git-scm.com/book/en/v2/images/basic-rebase-4.png)
+
+1. 它们看上去就像是串行的一样，提交历史是一条直线没有分叉
+2. 目的是为了确保在向远程分支推送时能保持提交历史的整洁
+
+
+![image](https://www.git-scm.com/book/en/v2/images/interesting-rebase-1.png)
+
+```
+git rebase --onto master server client // git rebase --onto [basebranch] [otherbranch] [topicbranch] 选中在 client 分支里但不在 server 分支里的修改（即 C8 和 C9），将它们在 master 分支上重放
+
+git checkout master
+
+git merge client
+```
+
+以上命令的意思是：“取出 client 分支，找出处于 client 分支和 server 分支的共同祖先之后的修改，然后把它们在 master 分支上重放一遍”。
+
+![image](https://www.git-scm.com/book/en/v2/images/interesting-rebase-2.png)
+
+```
+git rebase master server // git rebase [basebranch] [topicbranch] 将特性分支（即本例中的 server）变基到目标分支（即 master）上
+```
+
+![image](https://www.git-scm.com/book/en/v2/images/interesting-rebase-4.png)
+
+```
+git checkout master
+git merge server
+
+git branch -d client // 删除分支
+git branch -d server // 删除分支
+```
+
+![image](https://www.git-scm.com/book/en/v2/images/interesting-rebase-5.png)
+
+
+==**不要对在你的仓库外有副本的分支执行变基**==
 
 
 
