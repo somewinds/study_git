@@ -364,42 +364,17 @@ git push origin --delete testing // 运行带有 --delete 选项的 git push 命
 ```
 
 ### 3.6 变基
+<<<<<<< 5c675d3d3d8e60595465146c8cb9623a57659cc3
 
 在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。
 
+
+
+
+=======
+>>>>>>> C4
+
 ![image](https://www.git-scm.com/book/en/v2/images/basic-rebase-1.png)
-
-以上 主干master分支 和 临时experiment 分支，需要将 experiment 整合到主干。
-
-1. merge 命令：  
-    它会把两个分支的最新快照（C3 和 C4）以及二者最近的共同祖先（C2）进行三方合并，合并的结果是生成一个新的快照（C5）（并提交）
-![image](https://www.git-scm.com/book/en/v2/images/basic-rebase-2.png)
-2. rebase 命令：  
-    你可以提取在 C4 中引入的补丁和修改，然后在 C3 的基础上应用一次。将提交到某一分支上的所有修改都移至另一分支上，就好像“重新播放”一样。
-![image](https://www.git-scm.com/book/en/v2/images/basic-rebase-3.png)
-
-```
-git branch experiment // 新建 临时experiment
-
-git commit -a -m "C3" // master 提交记录 C3
-
-git checkout experiment // 切换到 experiment 分支
-
-git commit -a -m "C4" // master 提交记录 C4
-
-git rebase master // 将 experiment 分支变基到 目标基底分支 master
-
-git status // 确认所有的合并冲突都已被解决
-
-git mergetool // 打开合并工具解决冲突，输入 Beyond Compare，打开指定的合并工具
-
-git add * // 将所有文件添加到暂存区
-
-git rebase --continue // 继续变基（衍和）
-```
-
-git rebase master 它的原理是首先找到这两个分支（即当前分支 experiment、变基操作的目标基底分支 master）的最近共同祖先 C2，然后对比当前分支相对于该祖先的历次提交，提取相应的修改并存为临时文件，然后将当前分支指向目标基底 C3, 最后以此将之前另存为临时文件的修改依序应用。（译注：写明了 commit id，以便理解，下同）
-
 
 
 
