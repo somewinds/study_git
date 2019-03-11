@@ -334,9 +334,14 @@ git branch -v // 查看每一个分支的最后一次提交
 git branch --merged // --merged 和 --no-merged 过滤这个列表中已经合并或尚未合并到当前分支的分支
 ```
 
+### 3.4 分支开发工作流
 
+##### 长期分支
+![image](https://www.git-scm.com/book/en/v2/images/lr-branches-2.png)
+渐进稳定分支的流水线（“silo”）视图
 
-
+##### 特性分支（短期分支）
+![image](https://www.git-scm.com/book/en/v2/images/topic-branches-1.png)
 
 ---
 
