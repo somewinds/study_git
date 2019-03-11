@@ -16,6 +16,7 @@ git commit -m "initial project version" // 提交分支，但只存在本地分�
 // 在Linux系统中，commit信息使用单引号''包括，我使用的windows系统，信息应该是双引号""包括
 
 git push // 推送到远程
+git push origin testing // 将本地 testing 分支推送到远程 origin
 ```
 
 
@@ -342,6 +343,32 @@ git branch --merged // --merged 和 --no-merged 过滤这个列表中已经合�
 
 ##### 特性分支（短期分支）
 ![image](https://www.git-scm.com/book/en/v2/images/topic-branches-1.png)
+
+### 3.5 远程分支
+
+```
+git fetch origin // 查找 “origin” 是哪一个服务器，从中抓取本地没有的数据，并且更新本地数据库，移动 origin/master 指针指向新的、更新后的位置。
+
+git pull // 从远程拉取并合并到当前分支，git pull可以看成git fetch和git merge两个步骤的结合
+
+git checkout -b testing // 新建并切换分支
+git checkout -b testing origin/testing // 以远程跟踪分支为基础，新建并切换分支（起点位于 origin/testing）
+
+git checkout --track origin/testing // git checkout -b testing origin/testing 的快捷方式
+
+git branch -u origin/testing // -u 或 --set-upstream-to 切换当前分支跟踪的远程分支（从跟踪 master 更改为跟踪 testing）
+
+git branch -vv // 查看所有分支跟踪的远程分支，且包含更多的信息，如每一个分支正在跟踪哪个远程分支与本地分支是否是领先、落后或是都有
+
+git push origin --delete testing // 运行带有 --delete 选项的 git push 命令来删除一个远程分支
+```
+
+
+
+
+
+
+
 
 ---
 
