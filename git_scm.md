@@ -325,6 +325,14 @@ Conflicts:
 #
 ```
 
+### 3.3 分支管理
+
+```
+git branch // 获取所有分支的一个列表，* 表示现在检出的一个分支（即，当前 HEAD 指针所指向的分支）
+git branch -v // 查看每一个分支的最后一次提交
+
+git branch --merged // --merged 和 --no-merged 过滤这个列表中已经合并或尚未合并到当前分支的分支
+```
 
 
 
