@@ -363,6 +363,13 @@ git branch -vv // 查看所有分支跟踪的远程分支，且包含更多的�
 git push origin --delete testing // 运行带有 --delete 选项的 git push 命令来删除一个远程分支
 ```
 
+### 3.6 变基
+
+在 Git 中整合来自不同分支的修改主要有两种方法：merge 以及 rebase。
+
+
+
+
 
 
 
